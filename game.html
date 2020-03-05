@@ -1,14 +1,31 @@
 <html>
     <head>
         <script>
-            let gameChoices = ['Rock', 'Paper','Scissors'];
+            let gameChoices = ['rock', 'paper','scissors'];
 
             function computerPlay() {
-                let randomChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
-                console.log(randomChoice)
+                const computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+                return(computerSelection.toLowerCase())
+            }
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
+                    return('You win! Rock beats scissors!')
+                }
+                else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
+                    return('You win! Paper covers rock!')
+                }
+                else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
+                    return('You win! Scissors cut paper!')
+                }
+                else {
+                    return('Sorry! You lose.')
+                }
+                
             }
 
-            computerPlay();
+            const playerSelection = 'Scissors'
+            const computerSelection = computerPlay()
+            console.log(playRound(playerSelection, computerSelection))
 
           </script>
     </head>
