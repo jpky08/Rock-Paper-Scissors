@@ -1,8 +1,16 @@
 <html>
     <head>
         <script>
-            
-            </script>
+            let gameChoices = ['Rock', 'Paper','Scissors'];
+
+            function computerPlay() {
+                let randomChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+                console.log(randomChoice)
+            }
+
+            computerPlay();
+
+          </script>
     </head>
     <body>
         Welcome to the game.
