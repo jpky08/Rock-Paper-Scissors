@@ -22,10 +22,15 @@
                 }
                 
             }
+            function game() {
+                for (i=0; i < 5; i++) {
+                const playerSelection = prompt('Do you choose rock, paper, or scissors?')
+                const computerSelection = computerPlay()
+                console.log(playRound(playerSelection, computerSelection))
+             }
+            }
+            game()
 
-            const playerSelection = prompt('Do you choose rock, paper, or scissors?')
-            const computerSelection = computerPlay()
-            console.log(playRound(playerSelection, computerSelection))
 
           </script>
     </head>
