@@ -2,7 +2,8 @@
     <head>
         <script>
             let gameChoices = ['rock', 'paper','scissors'];
-            let score = 0;
+            let playerScore = 0;
+            let computerScore = 0;
 
             function computerPlay() {
                 const computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
@@ -10,18 +11,19 @@
             }
             function playRound(playerSelection, computerSelection) {
                 if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
-                    ++score;
+                    ++playerScore;
                     return('You win! Rock beats scissors!')
                 }
                 else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-                    ++score;
+                    ++playerScore;
                     return('You win! Paper covers rock!')
                 }
                 else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
-                    ++score;
+                    ++playerScore;
                     return('You win! Scissors cut paper!')
                 }
                 else {
+                    ++computerScore;
                     return('Sorry! You lose.')
                 }
                 
@@ -31,15 +33,18 @@
                 const playerSelection = prompt('Do you choose rock, paper, or scissors?')
                 const computerSelection = computerPlay()
                 console.log(playRound(playerSelection, computerSelection))
-                console.log(score);
              }
             }
             game()
+            if (playerScore > computerScore) {
+                document.write('Congrats! You scored ' + playerScore + ' points to the Computer\'s ' + computerScore + 'x')
+            }
+            else {document.write('Sorry! You only scored ' + playerScore + ' and the Computer scored ' + computerScore +'.')}
 
 
           </script>
     </head>
     <body>
-        Welcome to the game.
+        <p></p>
     </body>
 </html>
